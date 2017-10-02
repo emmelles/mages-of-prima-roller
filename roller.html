@@ -1,0 +1,81 @@
+<head>
+    <script>
+        var skillval=0
+        var magicval=0
+        
+        function skillup()
+        {
+            skillval = skillval+1;
+            if (skillval > 15)
+            skillval=15;
+            document.getElementById("skill").innerHTML = skillval;
+        }
+    
+    function skilldown()
+    {
+        skillval = skillval-1;
+        if (skillval<-4)
+        skillval=-4;
+        document.getElementById("skill").innerHTML = skillval;
+    }
+    
+    function magicup()
+    {
+        magicval = magicval+1;
+        if (magicval > 8)
+        magicval=8;
+        document.getElementById("magic").innerHTML = magicval;
+    }
+    
+    function magicdown()
+    {
+        magicval = magicval-1;
+        if (magicval<-4)
+        magicval=-4;
+        document.getElementById("magic").innerHTML = magicval;
+    }
+    
+    function doStuff()
+    {
+        var totalval=Math.round((magicval+4)*0.2*skillval)
+        document.getElementById("someDiv").innerHTML = totalval;
+    }
+    
+        </script>
+</head>
+<html>
+    
+    
+    <style>
+        body {background:#222222; text-align:center;text-shadow:2px 2px #111111;}
+        </style>
+    
+    
+    
+    <br><font size=5 color=#FFFFFF face="Times New Roman"><b>Laura and Rowan's <br>Needlessly Complicated<br> Magic System</b></font><br><hr width="200"><br>
+    
+    <font size=3 color=#FFFFFF>Skill Roll:</font><br><br>
+    
+    <button style="width: 50px; height: 50px" onClick=skilldown()>-</button>&nbsp
+    &nbsp&nbsp&nbsp
+    <font size=6 color=#FFFFFF><div id="skill" style="display: inline">0</div></font>&nbsp&nbsp&nbsp&nbsp&nbsp <button style="width: 50px; height: 50px" onClick=skillup()>+</button>
+    
+    <br><br>
+    <font size=3 color=#FFFFFF>Magic Roll:</font> <br><br>
+    
+    <button style="width: 50px; height: 50px" onClick=magicdown()>-</button>&nbsp&nbsp&nbsp &nbsp
+    <font size=6 color=#FFFFFF><div id="magic"  style="display: inline">0</div></font>&nbsp&nbsp&nbsp &nbsp
+    
+    <button style="width: 50px; height: 50px" onClick=magicup()>+</button>
+    <br>    <br>
+    
+    <button style="width: 80px; height: 30px" onClick=doStuff()>Get total</button>
+    
+    <br>
+    <font size=4 color=#FFFFFF><br>Total roll:<br><br></font>
+    <font size=8 color=#FFFFFF><div id="someDiv">
+        <i>Casting in progress...</i>
+    </div></font>
+    
+    <br><br>
+</html>
